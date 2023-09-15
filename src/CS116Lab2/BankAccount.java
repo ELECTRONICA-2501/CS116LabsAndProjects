@@ -7,6 +7,7 @@ public class BankAccount {
     private boolean isChecking;
     private boolean isSaving;
     private double overdrawLimit;
+    private static final double SAVINGS_WITHDRAWAL_FEE = 3.0;
 
 
         public BankAccount(){
@@ -57,14 +58,34 @@ public class BankAccount {
         if (amount > 0) {
             double newBalance = balance - amount;
             if ((isChecking && newBalance >= -overdrawLimit) || (isSaving && newBalance >= 0)) {
-                return balance -= amount;
+                if (isSaving){
+                    amount += SAVINGS_WITHDRAWAL_FEE;
+                }
+                balance -= amount;
+                return amount;
+                //return balance -= amount;
             } else {
                 System.out.println("withdrawal exceeds overdraw limit");
             }
         } else {
             System.out.println("invalid amount request");
         }
-        return amount;
+        return 0.0;
+    }
+    public  boolean transfer(BankAccount to, double amount){
+            if(this == to){
+                System.out.println("Cant transfer to same account");
+                return false;
+            }
+            double leftoverWithdraw = this.withdraw(amount);
+            if (leftoverWithdraw >0) {
+                to.deposit(leftoverWithdraw);
+                System.out.println("Successfully Transfered: $" + amount);
+                return true;
+            }else{
+                System.out.println("Transfer Failed: Insufficient funds or invalid amount.");
+                return false;
+            }
     }
 
     public void setOverdrawLimit(double overdrawLimit){
