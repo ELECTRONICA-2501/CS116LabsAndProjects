@@ -12,6 +12,9 @@ public class StudentGrades {
     }
     // Accessor for grades
     public int[] getGrades() {
+       // int[] a = new int[a.length]
+       //         for(int i =0l i < a.length; i++)
+       //             a[i] = grades[i];
         return grades;
     }
     // Mutator for grades
