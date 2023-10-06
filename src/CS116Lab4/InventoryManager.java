@@ -52,7 +52,7 @@ public class InventoryManager {
                     }
                 }
                 int temp = products[minIndex];
-                products[minIndex] = products[i];
+                products[i]= products[minIndex];
                 products[i] = temp;
                 //simple swap algorithm
             }
@@ -60,8 +60,11 @@ public class InventoryManager {
         public int binarySearch(int productID) {
             //binary search for productID
             int[] productIDs = new int[numProducts];
+            //create array of productIDs
             for (int i = 0; i < numProducts; i++) {
+                //loop through products array and add productIDs to new array
                 productIDs[i] = products[i].getProductID();
+                //add productIDs to new array
             }
 
             int l = 0;
