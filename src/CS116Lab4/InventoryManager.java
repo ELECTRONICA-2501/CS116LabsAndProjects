@@ -3,22 +3,31 @@ package CS116Lab4;
 public class InventoryManager {
 
     private Product[] products;
+    //create array of products
     private int numProducts;
     private int maxProd;
 
     public InventoryManager(int maxProd){
+        //constructor
         this.maxProd = maxProd;
+        //set maxProd to maxProd
         this.products = new Product[maxProd];
+        //create new array of products
         this.numProducts = 0;
+        //set numProducts to 0
 
     }
     public void addProduct(Product products){
         //add product to array
         if(numProducts < maxProd){
+            //if numProducts is less than maxProd, add product to array
             this.products[numProducts] = products;
+            //add product to array
             numProducts++;
+            //increment numProducts
         }
         else{
+
             System.out.println("Inventory is full");
         }
 
@@ -26,7 +35,9 @@ public class InventoryManager {
     public Product findProduct(int productID){
         //find product in array
         for(int i = 0; i < numProducts; i++){
+            //loop through array
             if(products[i].getProductID() == productID){
+                //if productID matches, return product
                 return products[i];
             }
         }
