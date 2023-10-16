@@ -5,24 +5,25 @@ public class ComputerPart {
     private String item;
     private double priceOfItem;
 
-    public void expensive(){
-        if (priceOfItem > 1000){
-            System.out.println("This item is expensive");
-
-        }
-        else if (priceOfItem < 250){
-            System.out.println("This item is cheap");
-        }
-        else if(priceOfItem >= 250 && priceOfItem <= 1000){
-            System.out.println("This item is moderately priced");
-        }
+    public String getItem(){
+        return item;
+    }
+    public double getPriceOfItem(){
+        return priceOfItem;
     }
 
-    public void addComputerPart(ComputerPart part){
+
+    public ComputerPart(String item, double priceOfItem){
+        this.item = item;
+        this.priceOfItem = priceOfItem;
+    }
+
+    //a method returning how many times a particular item is found in the list of parts.
+
+
+    /*public void addComputerPart(ComputerPart part){
         if ()
-
-
-    }
+    }*/
 
 
 }
