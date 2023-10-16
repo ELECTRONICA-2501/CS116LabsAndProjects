@@ -10,7 +10,9 @@ public class StudentIDManager {
     }
 
     public void addStudentID(int studentID, int index) {
+        //add studentID to array
         if (numStudents < studentIDs.length) {
+            //if numStudents is less than studentIDs.length, add studentID to array
             studentIDs[numStudents] = studentID;
             numStudents++;
         } else {
@@ -21,7 +23,9 @@ public class StudentIDManager {
     public void removeStudentID(int studentID) {
         for (int i = 0; i < numStudents; i++) {
             if (studentIDs[i] == studentID) {
+                //if studentID matches, remove studentID
                 studentIDs[i] = studentIDs[numStudents - 1];
+                //set studentID to last element
                 numStudents--;
             }
         }
