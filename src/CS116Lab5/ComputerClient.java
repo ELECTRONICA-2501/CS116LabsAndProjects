@@ -1,36 +1,30 @@
 package CS116Lab5;
-
 public class ComputerClient {
+    public static void main(String[] args) {
 
-    ComputerPart Ram = new ComputerPart("Ram", 100);
-    ComputerPart CPU = new ComputerPart("CPU", 200);
-    ComputerPart GPU = new ComputerPart("GPU", 300);
-    ComputerPart Motherboard = new ComputerPart("Motherboard", 400);
-    ComputerPart PowerSupply = new ComputerPart("PowerSupply", 500);
-    ComputerPart Case = new ComputerPart("Case", 600);
-    ComputerPart HardDrive = new ComputerPart("HardDrive", 700);
-    ComputerPart SSD = new ComputerPart("SSD", 800);
-    ComputerPart Monitor = new ComputerPart("Monitor", 900);
-    ComputerPart Keyboard = new ComputerPart("Keyboard", 1000);
+        ComputerPart Monitor = new ComputerPart("Monitor", 100);
+        ComputerPart Cache = new ComputerPart("Cache", 500);
+        ComputerPart CPU = new ComputerPart("CPU", 1000);
+        ComputerPart Ram = new ComputerPart("Ram", 1100);
 
-    ComputerKit kit1 = new ComputerKit();
-    kit1.addComputerPart(Ram);
-    kit1.addComputerPart(CPU);
-    kit1.addComputerPart(GPU);
+        ComputerKit kit1 = new ComputerKit();
 
-    System.out.Println("Price: " + kit1.expensive());
+       kit1.addComputerPart(Ram);
 
-    String itemToCheck = "Ram";
-    if (kit1.contains(itemToCheck)){
-        System.out.println("The kit contains " + itemToCheck);
+       kit1.addComputerPart(CPU);
+       kit1.addComputerPart(Cache);
+       kit1.addComputerPart(Monitor);
+         kit1.addComputerPart(Ram);
+
+       kit1.addComputerPart(Monitor);
+       kit1.addComputerPart(Ram);
+
+         System.out.println(kit1.expensive());
+         System.out.println(kit1.contains("Monitor" ));
+         System.out.println(kit1.countItem("Monitor"));
+        System.out.println(kit1.countItem("CPU"));
+        System.out.println(kit1.countItem("Cache"));
+        System.out.println(kit1.countItem("Ram"));
+
     }
-    else{
-        System.out.println("The kit does not contain " + itemToCheck);
-    }
-
-    System.out.Printlin()
-
-
-
-
 }

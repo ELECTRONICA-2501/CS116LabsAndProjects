@@ -12,7 +12,12 @@ public class ComputerPart {
         return priceOfItem;
     }
 
-
+    public void setItem(String item){
+        this.item = item;
+    }
+    public void setPriceOfItem(double priceOfItem){
+        this.priceOfItem = priceOfItem;
+    }
     public ComputerPart(String item, double priceOfItem){
         this.item = item;
         this.priceOfItem = priceOfItem;
