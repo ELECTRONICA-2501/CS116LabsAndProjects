@@ -4,11 +4,9 @@ public class Circle extends Shape{
     protected double radius;
 
     public Circle(){
-        System.out.println("Circle constructor");
+        radius = 1.0;
     }
-    public Circle(double radius){
-        setRadius(radius);
-    }
+
     public Circle(double radius, String color, boolean filled){
         super(color, filled);
         setRadius(radius);

@@ -5,6 +5,10 @@ public class Animal {
     private int age;
     private String sound;
 
+    public void makeSound(){
+        System.out.println("Animal: Make Sound!");
+    }
+
     public Animal(){
         name = "";
         age = 0;

@@ -9,6 +9,7 @@ public class Student extends Person{
         System.out.println("Student constructor");
     }
     public Student(String name, String address){
+
         super(name, address);
     }
     public void addCourseGrade(String course, int grade){
